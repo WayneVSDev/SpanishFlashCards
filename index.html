@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Flashcards</title>
+  <style>
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #f4f7f6;
+    }
+    .switch-button {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    .card-container {
+      display: grid;
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .card {
+      background-color: #fff;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(145deg, #fdebd0, #f4d03f);
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .hidden {
+      display: none;
+    }
+    .chinese {
+      font-weight: bold;
+      color: #34495e;
+      margin-bottom: 10px;
+    }
+    .english, .spanish {
+      font-weight: normal;
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+
+<body>
+    <button class="switch-button" onclick="switchLanguage()"><b style="color: yellow">English</b> => Spanish => French</button>
+    <div class="card-container">
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">星期一</div>
+        <div class="english hidden">Monday</div>
+        <div class="spanish hidden">Lunes</div>
+        <div class="french hidden">Lundi</div>
+      </div>
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">星期二</div>
+        <div class="english hidden">Tuesday</div>
+        <div class="spanish hidden">Martes</div>
+        <div class="french hidden">Mardi</div>
+      </div>
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">星期三</div>
+        <div class="english hidden">Wednesday</div>
+        <div class="spanish hidden">Miércoles</div>
+        <div class="french hidden">Mercredi</div>
+      </div>
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">星期四</div>
+        <div class="english hidden">Thursday</div>
+        <div class="spanish hidden">Jueves</div>
+        <div class="french hidden">Jeudi</div>
+      </div>
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">星期五</div>
+        <div class="english hidden">Friday</div>
+        <div class="spanish hidden">Viernes</div>
+        <div class="french hidden">Vendredi</div>
+      </div>
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">星期六</div>
+        <div class="english hidden">Saturday</div>
+        <div class="spanish hidden">Sábado</div>
+        <div class="french hidden">Samedi</div>
+      </div>
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">星期日</div>
+        <div class="english hidden">Sunday</div>
+        <div class="spanish hidden">Domingo</div>
+        <div class="french hidden">Dimanche</div>
+      </div>
+
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">什么</div>
+        <div class="english hidden">What</div>
+        <div class="spanish hidden">Qué</div>
+        <div class="french hidden">Quoi</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">不要放弃</div>
+        <div class="english hidden">Never give up</div>
+        <div class="spanish hidden">Nunca te rindas</div>
+        <div class="french hidden">N'abandonne jamais</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">等一下</div>
+        <div class="english hidden">Wait a moment</div>
+        <div class="spanish hidden">Espera un momento</div>
+        <div class="french hidden">Attends un moment</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">太好了</div>
+        <div class="english hidden">Thank goodness</div>
+        <div class="spanish hidden">Gracias a Dios</div>
+        <div class="french hidden">Dieu merci</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">好的，请</div>
+        <div class="english hidden">Yes, please</div>
+        <div class="spanish hidden">Sí, por favor</div>
+        <div class="french hidden">Oui, s'il vous plaît</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">加油</div>
+        <div class="english hidden">Good luck</div>
+        <div class="spanish hidden">Buena suerte</div>
+        <div class="french hidden">Bonne chance</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">太棒了</div>
+        <div class="english hidden">Awesome</div>
+        <div class="spanish hidden">Increíble</div>
+        <div class="french hidden">Génial</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">早安</div>
+        <div class="english hidden">Good morning</div>
+        <div class="spanish hidden">Buenos días</div>
+        <div class="french hidden">Bonjour</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">晚安</div>
+        <div class="english hidden">Good night</div>
+        <div class="spanish hidden">Buenas noches</div>
+        <div class="french hidden">Bonne nuit</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">再见</div>
+        <div class="english hidden">Goodbye</div>
+        <div class="spanish hidden">Adiós</div>
+        <div class="french hidden">Au revoir</div>
+      </div>
+
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">真的吗</div>
+        <div class="english hidden">Really</div>
+        <div class="spanish hidden">¿De verdad?</div>
+        <div class="french hidden">Vraiment</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">小心</div>
+        <div class="english hidden">Take care</div>
+        <div class="spanish hidden">Cuídate</div>
+        <div class="french hidden">Prends soin de toi</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">谢谢</div>
+        <div class="english hidden">Thank you</div>
+        <div class="spanish hidden">Gracias</div>
+        <div class="french hidden">Merci</div>
+      </div>
+
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">对不起</div>
+        <div class="english hidden">Excuse me</div>
+        <div class="spanish hidden">Perdón</div>
+        <div class="french hidden">Excusez-moi</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">好的，明白了</div>
+        <div class="english hidden">Yes, I understand</div>
+        <div class="spanish hidden">Sí, entiendo</div>
+        <div class="french hidden">Oui, je comprends</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">没问题</div>
+        <div class="english hidden">No problem</div>
+        <div class="spanish hidden">No hay problema</div>
+        <div class="french hidden">Pas de problème</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">初次见面</div>
+        <div class="english hidden">Nice to meet you</div>
+        <div class="spanish hidden">Mucho gusto</div>
+        <div class="french hidden">Enchanté</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">好吃</div>
+        <div class="english hidden">Delicious</div>
+        <div class="spanish hidden">Delicioso</div>
+        <div class="french hidden">Délicieux</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">多少錢</div>
+        <div class="english hidden">How much</div>
+        <div class="spanish hidden">¿Cuánto cuesta?</div>
+        <div class="french hidden">Combien</div>
+      </div>
+      
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">没什么</div>
+        <div class="english hidden">It's nothing</div>
+        <div class="spanish hidden">No es nada</div>
+        <div class="french hidden">Ce n'est rien</div>
+      </div>
+
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">我饿了</div>
+        <div class="english hidden">I'm hungry</div>
+        <div class="spanish hidden">Tengo hambre</div>
+        <div class="french hidden">J'ai faim</div>
+      </div>
+
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">可以吗</div>
+        <div class="english hidden">Is it okay</div>
+        <div class="spanish hidden">¿Está bien?</div>
+        <div class="french hidden">Est-ce que ça va ?</div>
+      </div>      
+
+      <div class="card" onclick="reveal(this)">
+        <div class="chinese">欢迎光临</div>
+        <div class="english hidden">Welcome</div>
+        <div class="spanish hidden">Bienvenidos</div>
+        <div class="french hidden">Bienvenue</div>
+      </div>
+    </div>
+    
+    <script>
+      let mainLanguage = 'chinese';
+      let currentLanguage = 'english'; // Initial language
+
+      function switchLanguage() {
+        const button = document.querySelector(".switch-button");
+        const cards = document.querySelectorAll(".card");
+
+        const languages = ['english', 'spanish', 'french'];
+        const buttonTexts = [
+          '<b style="color: yellow">English</b> => Spanish => French', 
+          'English => <b style="color: yellow">Spanish</b> => French', 
+          'English => Spanish => <b style="color: yellow">French</b>'];
+
+        const currentIndex = languages.indexOf(currentLanguage);
+        const newIndex = (currentIndex + 1) % languages.length;
+        currentLanguage = languages[newIndex];
+
+        button.innerHTML = buttonTexts[newIndex];
+        document.querySelectorAll('.card').forEach(card => {
+          card.classList.remove('revealed');
+          card.querySelector('.english').classList.add('hidden');
+          card.querySelector('.spanish').classList.add('hidden');
+          card.querySelector('.french').classList.add('hidden');
+        });
+      }
+
+      function reveal(card) {
+        if (!card.classList.contains('revealed')) {
+          card.classList.add('revealed');
+          
+          speakText(card.querySelector(`.${mainLanguage}`).textContent, getLanguageCode(mainLanguage));
+          card.querySelector(`.${currentLanguage}`).classList.remove('hidden');
+          speakText(card.querySelector(`.${currentLanguage}`).textContent, getLanguageCode(currentLanguage));
+        } else {
+          card.classList.remove('revealed');
+          card.querySelector('.english').classList.add('hidden');
+          card.querySelector('.spanish').classList.add('hidden');
+          card.querySelector('.french').classList.add('hidden');
+        }
+      }
+
+      function getLanguageCode(language) {
+        switch (language) {
+          case 'chinese':
+            return 'zh-CN';
+          case 'english':
+            return 'en-US';
+          case 'spanish':
+            return 'es-ES';
+          case 'french':
+            return 'fr-FR';
+          default:
+            return null;
+        }
+      }
+
+      function speakText(text, lang) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        window.speechSynthesis.speak(utterance);
+      }
+    </script>
+  </body>
+</html>
